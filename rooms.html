@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeStock — Rooms</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">
+                <span>H</span>
+                <b>HomeStock</b>
+            </div>
+
+            <nav>
+     <a href="index.html">
+      ▣
+      <span>Dashboard</span>
+     </a>
+     <a href="inventory.html">
+      ⬡
+      <span>Inventory</span>
+     </a>
+     <a class="active" href="rooms.html">
+      ⌂
+      <span>Rooms</span>
+     </a>
+     <a href="categories.html">
+      ▤
+      <span>Categories</span>
+     </a>
+     <a href="reports.html">
+      ▥
+      <span>Reports</span>
+     </a>
+    <a href="activity.html">◷<span>Activity</span></a>
+    
+    </nav>
+
+            <div class="sidebar-account">
+<div class="sidebar-account-link" aria-hidden="true">
+<span class="sidebar-account-avatar" data-profile-avatar>🙂</span>
+<span class="sidebar-account-copy"><strong data-user-name>HomeStock User</strong><span data-user-email>Account</span></span>
+</div>
+</div>
+</aside>
+
+        <main>
+            <header>
+                <div>
+                    <h1>Rooms</h1>
+                    <p>Manage rooms in your home</p>
+                </div>
+
+                <div class="actions">
+                    <button class="btn" id="exportRooms" type="button">
+                        Export CSV
+                    </button>
+                    <button class="btn primary" id="addRoom" type="button">
+                        + Add Room
+                    </button>
+                    <button class="avatar profile-header-button" type="button" data-profile-toggle title="Open profile" aria-expanded="false"><span data-profile-avatar>🙂</span></button>
+                </div>
+            </header>
+
+            <div class="rooms-toolbar">
+                <div class="search room-search">
+                    <span>⌕</span>
+                    <input
+                        id="roomSearch"
+                        type="search"
+                        placeholder="Search rooms..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="room-summary">
+                    <span>
+                        <b id="roomCount">6</b>
+                        rooms
+                    </span>
+                    <span>
+                        <b id="roomItemCount">371</b>
+                        items
+                    </span>
+                    <span>
+                        <b id="roomTotalValue">77,300 RWF</b>
+                    </span>
+                </div>
+            </div>
+
+            <section class="room-page-grid" id="roomGrid"></section>
+
+            <div class="room-empty" id="roomEmpty" hidden>
+                <div class="empty-icon">⌂</div>
+                <h2>No rooms found</h2>
+                <p id="emptyMessage">No rooms match your search.</p>
+                <button class="btn" id="clearRoomSearch" type="button">
+                    Clear search
+                </button>
+            </div>
+
+            <div class="room-footer" id="roomFooter">
+                Showing 6 rooms
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-bg" hidden id="roomModal">
+        <div class="modal room-modal">
+            <div class="modal-head">
+                <div>
+                    <h2 id="roomModalTitle">Add New Room</h2>
+                    <p>Create a room for your home inventory.</p>
+                </div>
+                <button class="close" id="closeRoomModal" type="button">
+                    &times;
+                </button>
+            </div>
+
+            <form id="roomForm">
+                <input id="roomEditId" type="hidden">
+
+                <div class="field full">
+                    <label for="roomName">ROOM NAME</label>
+                    <input
+                        id="roomName"
+                        type="text"
+                        placeholder="e.g. Guest Room"
+                        required
+                    >
+                </div>
+
+                <div class="field full">
+                    <label for="roomDescription">DESCRIPTION</label>
+                    <input
+                        id="roomDescription"
+                        type="text"
+                        placeholder="e.g. Guest bedroom & storage"
+                        required
+                    >
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn" id="cancelRoom" type="button">
+                        Cancel
+                    </button>
+                    <button class="btn primary" type="submit">
+                        Save Room
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/supabase-config.js"></script>
+    <script src="js/online.js"></script>
+    <script src="js/status.js"></script>
+    <script src="js/profile-menu.js"></script>
+<script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HomeStock — Users & Account</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><span>H</span><b>HomeStock</b></div>
+<nav>
+<a href="index.html">▣<span>Dashboard</span></a>
+<a href="inventory.html">⬡<span>Inventory</span></a>
+<a href="rooms.html">⌂<span>Rooms</span></a>
+<a href="categories.html">▤<span>Categories</span></a>
+<a href="reports.html">▥<span>Reports</span></a>
+<a href="activity.html">◷<span>Activity</span></a>
+
+</nav>
+<div class="sidebar-account">
+<div class="sidebar-account-link" aria-hidden="true">
+<span class="sidebar-account-avatar" data-profile-avatar>🙂</span>
+<span class="sidebar-account-copy"><strong data-user-name>HomeStock User</strong><span data-user-email>Account</span></span>
+</div>
+</div>
+</aside>
+<main>
+<header><div><h1>Profile</h1><p>Your HomeStock account settings</p></div><div class="actions"><button class="avatar profile-header-button" type="button" data-profile-toggle title="Open profile" aria-expanded="false"><span data-profile-avatar>🙂</span></button></div></header>
+<section class="panel profile-settings-page">
+<div class="profile-settings-hero"><div class="profile-settings-avatar" data-profile-avatar>🙂</div><div><span class="eyebrow">YOUR PROFILE</span><h2 data-user-name>HomeStock User</h2><p data-user-email>Account</p></div></div>
+<div class="profile-settings-grid">
+<div class="profile-info-tile"><span>NAME</span><strong data-user-name>HomeStock User</strong><button type="button" class="text-button" data-change-name-page>Change name</button></div>
+<div class="profile-info-tile"><span>EMAIL</span><strong data-user-email>Account</strong><small>Email is used for login.</small></div>
+<div class="profile-info-tile"><span>PROFILE PICTURE</span><strong>Cartoon avatar</strong><button type="button" class="text-button" data-change-avatar-page>Choose another</button></div>
+</div>
+</section>
+</main></div>
+<script src="js/supabase-config.js"></script>
+<script src="js/online.js"></script>
+<script src="js/profile-menu.js"></script>
+<script src="js/auth.js"></script>
+
+</body></html>

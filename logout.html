@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HomeStock — Logging out</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main style="max-width:520px;margin:15vh auto;padding:30px;text-align:center;">
+  <h1>Signing you out…</h1>
+  <p id="logoutMessage">Please wait.</p>
+</main>
+<script src="js/supabase-config.js"></script>
+<script src="js/online.js"></script>
+<script>
+(async function () {
+  try {
+    if (window.HomeStockOnline?.enabled) {
+      await window.HomeStockOnline.signOut();
+    } else {
+      localStorage.removeItem("homestock-logged-in");
+      localStorage.removeItem("homestock-current-user");
+      localStorage.removeItem("homestock-access-token");
+      localStorage.removeItem("homestock-refresh-token");
+    }
+  } finally {
+    window.location.replace("login.html");
+  }
+})();
+</script>
+</body>
+</html>

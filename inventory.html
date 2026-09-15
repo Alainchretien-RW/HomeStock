@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   HomeStock &mdash; Inventory
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="app">
+   <aside class="sidebar">
+    <div class="brand">
+     <span>
+      H
+     </span>
+     <b>
+      HomeStock
+     </b>
+    </div>
+    <nav>
+     <a href="index.html">
+      ▣
+      <span>Dashboard</span>
+     </a>
+     <a class="active" href="inventory.html">
+      ⬡
+      <span>Inventory</span>
+     </a>
+     <a href="rooms.html">
+      ⌂
+      <span>Rooms</span>
+     </a>
+     <a href="categories.html">
+      ▤
+      <span>Categories</span>
+     </a>
+     <a href="reports.html">
+      ▥
+      <span>Reports</span>
+     </a>
+    <a href="activity.html">◷<span>Activity</span></a>
+    
+    </nav>
+    
+    <div class="sidebar-account">
+<div class="sidebar-account-link" aria-hidden="true">
+<span class="sidebar-account-avatar" data-profile-avatar>🙂</span>
+<span class="sidebar-account-copy"><strong data-user-name>HomeStock User</strong><span data-user-email>Account</span></span>
+</div>
+</div>
+</aside>
+   <main>
+    <header>
+     <div>
+      <h1>
+       Inventory
+      </h1>
+      <p>
+       Manage everything in your home
+      </p>
+     </div>
+     <div class="actions">
+      <button class="btn" id="export">
+       Export CSV
+      </button>
+      <button class="btn primary" id="addItem">
+       + Add Item
+      </button>
+      <button class="avatar profile-header-button" type="button" data-profile-toggle title="Open profile" aria-expanded="false"><span data-profile-avatar>🙂</span></button>
+     </div>
+    </header>
+    <div class="toolbar">
+     <div class="search">
+      &telrec;
+      <input id="search" placeholder="Search inventory..."/>
+     </div>
+     <div class="tabs">
+      <button class="tab active" data-filter="all">
+       All Items
+       <b id="allCount">
+        20
+       </b>
+      </button>
+      <button class="tab" data-filter="low">
+       Low Stock
+       <b id="lowCount">
+        0
+       </b>
+      </button>
+      <button class="tab" data-filter="out">
+       Out of Stock
+       <b id="outCount">
+        0
+       </b>
+      </button>
+     </div>
+     <div class="summary">
+      <b id="count">
+       20
+      </b>
+      items &middot;
+      <strong id="total">
+       19,900 RWF
+      </strong>
+     </div>
+    </div>
+    <section class="table panel">
+     <table>
+      <thead>
+       <tr>
+        <th>
+         ITEM
+        </th>
+        <th>
+         ROOM
+        </th>
+        <th>
+         CATEGORY
+        </th>
+        <th>
+         QUANTITY
+        </th>
+        <th>
+         VALUE
+        </th>
+        <th>
+         STATUS
+        </th>
+        <th>
+         ACTIONS
+        </th>
+       </tr>
+      </thead>
+      <tbody id="rows">
+      </tbody>
+     </table>
+     <div class="footer" id="showing">
+     </div>
+    </section>
+   </main>
+  </div>
+  <div class="modal-bg" hidden="" id="modal">
+   <div class="modal">
+    <div class="modal-head">
+     <div>
+      <h2 id="modalTitle">
+       Add New Item
+      </h2>
+      <p>
+       Fill in the details to add to your inventory.
+      </p>
+     </div>
+     <button class="close" id="close">
+      &times;
+     </button>
+    </div>
+    <form id="form">
+     <input id="editId" type="hidden"/>
+     <div class="field full">
+      <label>
+       ITEM NAME
+      </label>
+      <input id="name" placeholder='e.g. Samsung 55" QLED TV' required=""/>
+     </div>
+     <div class="field">
+      <label>
+       ROOM
+      </label>
+      <select id="room">
+       <option>
+        Living Room
+       </option>
+       <option>
+        Kitchen
+       </option>
+       <option>
+        Master Bedroom
+       </option>
+       <option>
+        Home Office
+       </option>
+       <option>
+        Garage
+       </option>
+       <option>
+        Dining Room
+       </option>
+      </select>
+     </div>
+     <div class="field">
+      <label>
+       CATEGORY
+      </label>
+      <select id="category">
+       <option value="Electronics">Electronics</option>
+      </select>
+     </div>
+     <div class="field">
+      <label>
+       QUANTITY
+      </label>
+      <input id="qty" min="0" required="" type="number" value="1"/>
+     </div>
+     <div class="field">
+      <label>
+       VALUE (RWF)
+      </label>
+      <input id="value" min="0" required="" step=".01" type="number" value="0"/>
+     </div>
+     <div class="field full">
+      <label>
+       MINIMUM STOCK
+      </label>
+      <input id="min" min="0" required="" type="number" value="1"/>
+     </div>
+     <div class="preview full">
+      Status preview:
+      <strong id="preview">
+       ● Low Stock
+      </strong>
+     </div>
+     <div class="modal-actions">
+      <button class="btn" id="cancel" type="button">
+       Cancel
+      </button>
+      <button class="btn primary" id="save">
+       + Add Item
+      </button>
+     </div>
+    </form>
+   </div>
+  </div>
+  <script src="js/supabase-config.js"></script>
+    <script src="js/online.js"></script>
+    <script src="js/status.js"></script>
+    <script src="js/profile-menu.js"></script>
+<script src="js/auth.js"></script>
+  <script src="js/app.js">
+  </script>
+ </body>
+</html>

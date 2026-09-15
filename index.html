@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   HomeStock &mdash; Dashboard
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="app">
+   <aside class="sidebar">
+    <div class="brand">
+     <span>
+      H
+     </span>
+     <b>
+      HomeStock
+     </b>
+    </div>
+    <nav>
+     <a class="active" href="index.html">
+      ▣
+      <span>Dashboard</span>
+     </a>
+     <a href="inventory.html">
+      ⬡
+      <span>Inventory</span>
+     </a>
+     <a href="rooms.html">
+      ⌂
+      <span>Rooms</span>
+     </a>
+     <a href="categories.html">
+      ▤
+      <span>Categories</span>
+     </a>
+     <a href="reports.html">
+      ▥
+      <span>Reports</span>
+     </a>
+     <a href="activity.html">
+      ◷
+      <span>Activity</span>
+     </a>
+    </nav>
+    <div class="sidebar-account">
+     <div class="sidebar-account-link" aria-hidden="true">
+      <span class="sidebar-account-avatar" data-profile-avatar>🙂</span>
+      <span class="sidebar-account-copy"><strong data-user-name>HomeStock User</strong><span data-user-email>Account</span></span>
+     </div>
+    </div>
+   </aside>
+   <main>
+    <header>
+     <div>
+      <h1>
+       Dashboard
+      </h1>
+      <p>
+       Last updated &middot; Sep 8, 2026
+      </p>
+     </div>
+     <div class="actions">
+      <button class="btn" id="exportDash">
+       Export CSV
+      </button>
+      <a class="btn primary" href="inventory.html">
+       + Add Item
+      </a>
+      <button class="avatar profile-header-button" type="button" data-profile-toggle title="Open profile" aria-expanded="false"><span data-profile-avatar>🙂</span></button>
+     </div>
+    </header>
+    <section class="stats">
+     <div class="stat teal">
+      <label>
+       TOTAL ITEMS
+      </label>
+      <strong>
+       371
+      </strong>
+      <small>
+       +12 this month
+      </small>
+     </div>
+     <div class="stat purple">
+      <label>
+       TOTAL VALUE
+      </label>
+      <strong>
+       77,300 RWF
+      </strong>
+      <small>
+       Across 6 rooms
+      </small>
+     </div>
+     <div class="stat orange">
+      <label>
+       ROOMS TRACKED
+      </label>
+      <strong>
+       6
+      </strong>
+      <small>
+       128 items &middot; Garage
+      </small>
+     </div>
+     <div class="stat teal">
+      <label>
+       CATEGORIES
+      </label>
+      <strong>
+       14
+      </strong>
+      <small>
+       Electronics lead at 48
+      </small>
+     </div>
+    </section>
+    <section class="dash-grid">
+     <div>
+      <div class="section-title">
+       <h2>
+        Rooms
+       </h2>
+       <a href="rooms.html">
+        View all &rarr;
+       </a>
+      </div>
+      <div class="rooms">
+       <a class="room" href="rooms.html">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <i class="tag teal-bg">
+         34 items
+        </i>
+        <div>
+         <b>
+          Living Room
+         </b>
+         <strong>
+          12,400 RWF
+         </strong>
+        </div>
+       </a>
+       <a class="room" href="rooms.html">
+        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <i class="tag purple-bg">
+         87 items
+        </i>
+        <div>
+         <b>
+          Kitchen
+         </b>
+         <strong>
+          8,900 RWF
+         </strong>
+        </div>
+       </a>
+       <a class="room" href="rooms.html">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <i class="tag orange-bg">
+         52 items
+        </i>
+        <div>
+         <b>
+          Master Bedroom
+         </b>
+         <strong>
+          21,300 RWF
+         </strong>
+        </div>
+       </a>
+       <a class="room" href="rooms.html">
+        <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <i class="tag teal-bg">
+         41 items
+        </i>
+        <div>
+         <b>
+          Home Office
+         </b>
+         <strong>
+          18,600 RWF
+         </strong>
+        </div>
+       </a>
+       <a class="room" href="rooms.html">
+        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <i class="tag pink-bg">
+         128 items
+        </i>
+        <div>
+         <b>
+          Garage
+         </b>
+         <strong>
+          9,700 RWF
+         </strong>
+        </div>
+       </a>
+       <a class="room" href="rooms.html">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <i class="tag blue-bg">
+         29 items
+        </i>
+        <div>
+         <b>
+          Dining Room
+         </b>
+         <strong>
+          6,400 RWF
+         </strong>
+        </div>
+       </a>
+      </div>
+     </div>
+     <aside class="panel activity">
+      <div class="section-title">
+       <h2>
+        Recent Activity
+       </h2>
+       <a href="inventory.html">
+        All &rarr;
+       </a>
+      </div>
+      <div class="activity-row">
+       <span>
+        +
+       </span>
+       <div>
+        <b>
+         Sony 65" OLED TV
+        </b>
+        <small>
+         Living Room &middot; 2 hours ago
+        </small>
+       </div>
+       <strong>
+        2,800 RWF
+       </strong>
+      </div>
+      <div class="activity-row">
+       <span>
+        ~
+       </span>
+       <div>
+        <b>
+         KitchenAid Stand Mixer
+        </b>
+        <small>
+         Kitchen &middot; 5 hours ago
+        </small>
+       </div>
+       <strong>
+        450 RWF
+       </strong>
+      </div>
+      <div class="activity-row">
+       <span class="red">
+        &minus;
+       </span>
+       <div>
+        <b>
+         IKEA Po&auml;ng Chair
+        </b>
+        <small>
+         Living Room &middot; Yesterday
+        </small>
+       </div>
+       <strong class="red-text">
+        199 RWF
+       </strong>
+      </div>
+      <div class="activity-row">
+       <span>
+        +
+       </span>
+       <div>
+        <b>
+         Herman Miller Aeron
+        </b>
+        <small>
+         Home Office &middot; Yesterday
+        </small>
+       </div>
+       <strong>
+        1,600 RWF
+       </strong>
+      </div>
+      <div class="activity-row">
+       <span>
+        ~
+       </span>
+       <div>
+        <b>
+         MacBook Pro 16"
+        </b>
+        <small>
+         Home Office &middot; 2 days ago
+        </small>
+       </div>
+       <strong>
+        3,200 RWF
+       </strong>
+      </div>
+      <div class="activity-row">
+       <span>
+        +
+       </span>
+       <div>
+        <b>
+         Weber Genesis Grill
+        </b>
+        <small>
+         Garage &middot; 3 days ago
+        </small>
+       </div>
+       <strong>
+        1,100 RWF
+       </strong>
+      </div>
+     </aside>
+    </section>
+    <section class="bottom">
+     <div class="panel">
+      <div class="panel-head">
+       <h2>
+        Highest Value Items
+       </h2>
+       <span>
+        Top 5
+       </span>
+      </div>
+      <div class="value">
+       <em>
+        01
+       </em>
+       <div>
+        <b>
+         Herman Miller Aeron Chair
+        </b>
+        <small>
+         Home Office &middot; Furniture
+        </small>
+       </div>
+       <strong>
+        3,200 RWF
+       </strong>
+      </div>
+      <div class="value">
+       <em>
+        02
+       </em>
+       <div>
+        <b>
+         MacBook Pro 16"
+        </b>
+        <small>
+         Home Office &middot; Electronics
+        </small>
+       </div>
+       <strong>
+        3,200 RWF
+       </strong>
+      </div>
+      <div class="value">
+       <em>
+        03
+       </em>
+       <div>
+        <b>
+         Sony 65" OLED TV
+        </b>
+        <small>
+         Living Room &middot; Electronics
+        </small>
+       </div>
+       <strong>
+        2,800 RWF
+       </strong>
+      </div>
+      <div class="value">
+       <em>
+        04
+       </em>
+       <div>
+        <b>
+         Sub-Zero Refrigerator
+        </b>
+        <small>
+         Kitchen &middot; Appliances
+        </small>
+       </div>
+       <strong>
+        2,400 RWF
+       </strong>
+      </div>
+      <div class="value">
+       <em>
+        05
+       </em>
+       <div>
+        <b>
+         Tempur-Pedic Mattress
+        </b>
+        <small>
+         Master Bedroom &middot; Furniture
+        </small>
+       </div>
+       <strong>
+        2,100 RWF
+       </strong>
+      </div>
+     </div>
+     <div class="panel">
+      <div class="panel-head">
+       <h2>
+        Category Breakdown
+       </h2>
+       <span>
+        by count
+       </span>
+      </div>
+      <div class="bars">
+       <label>
+        Electronics
+        <b>
+         48
+        </b>
+       </label>
+       <i>
+        <span style="width:82%">
+        </span>
+       </i>
+       <label>
+        Furniture
+        <b>
+         82
+        </b>
+       </label>
+       <i>
+        <span style="width:64%">
+        </span>
+       </i>
+       <label>
+        Appliances
+        <b>
+         61
+        </b>
+       </label>
+       <i>
+        <span style="width:48%">
+        </span>
+       </i>
+       <label>
+        Clothing
+        <b>
+         114
+        </b>
+       </label>
+       <i>
+        <span style="width:31%">
+        </span>
+       </i>
+       <label>
+        Tools
+        <b>
+         93
+        </b>
+       </label>
+       <i>
+        <span style="width:26%">
+        </span>
+       </i>
+      </div>
+     </div>
+    </section>
+   </main>
+  </div>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/online.js"></script>
+  <script src="js/profile-menu.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js">
+  </script>
+  <script src="js/dashboard.js"></script>
+ </body>
+</html>

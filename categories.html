@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeStock — Categories</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">
+                <span>H</span>
+                <b>HomeStock</b>
+            </div>
+
+            <nav>
+     <a href="index.html">
+      ▣
+      <span>Dashboard</span>
+     </a>
+     <a href="inventory.html">
+      ⬡
+      <span>Inventory</span>
+     </a>
+     <a href="rooms.html">
+      ⌂
+      <span>Rooms</span>
+     </a>
+     <a class="active" href="categories.html">
+      ▤
+      <span>Categories</span>
+     </a>
+     <a href="reports.html">
+      ▥
+      <span>Reports</span>
+     </a>
+    <a href="activity.html">◷<span>Activity</span></a>
+    
+    </nav>
+
+            <div class="sidebar-account">
+<div class="sidebar-account-link" aria-hidden="true">
+<span class="sidebar-account-avatar" data-profile-avatar>🙂</span>
+<span class="sidebar-account-copy"><strong data-user-name>HomeStock User</strong><span data-user-email>Account</span></span>
+</div>
+</div>
+</aside>
+
+        <main>
+            <header>
+                <div>
+                    <h1>Categories</h1>
+                    <p>Organize and manage your inventory categories</p>
+                </div>
+
+                <div class="actions">
+                    <button class="btn primary" id="addCategory" type="button">
+                        + Add Category
+                    </button>
+                    <button class="avatar profile-header-button" type="button" data-profile-toggle title="Open profile" aria-expanded="false"><span data-profile-avatar>🙂</span></button>
+                </div>
+            </header>
+
+            <div class="category-toolbar">
+                <div class="search category-search">
+                    <span>⌕</span>
+                    <input
+                        id="categorySearch"
+                        type="search"
+                        placeholder="Search categories..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="category-summary">
+                    <span>
+                        Categories
+                        <b id="categoryCount">0</b>
+                    </span>
+                    <span>
+                        Items
+                        <b id="categoryItemCount">0</b>
+                    </span>
+                    <span>
+                        Total value
+                        <b id="categoryTotalValue">0 RWF</b>
+                    </span>
+                </div>
+            </div>
+
+            <section class="category-grid" id="categoryGrid"></section>
+
+            <div class="category-empty" id="categoryEmpty" hidden>
+                <div class="empty-icon">▤</div>
+                <h2>No categories found</h2>
+                <p id="categoryEmptyMessage">No categories match your search.</p>
+                <button class="btn" id="clearCategorySearch" type="button">
+                    Clear search
+                </button>
+            </div>
+
+            <div class="category-footer" id="categoryFooter">
+                Showing 0 categories
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-bg" hidden id="categoryModal">
+        <div class="modal category-modal">
+            <div class="modal-head">
+                <div>
+                    <h2 id="categoryModalTitle">Add New Category</h2>
+                    <p>Create a category for your home inventory.</p>
+                </div>
+                <button class="close" id="closeCategoryModal" type="button">&times;</button>
+            </div>
+
+            <form id="categoryForm">
+                <input id="categoryEditId" type="hidden">
+
+                <div class="field full">
+                    <label for="categoryName">CATEGORY NAME</label>
+                    <input id="categoryName" type="text"
+                           placeholder="e.g. Garden Equipment" required>
+                </div>
+
+                <div class="field full">
+                    <label for="categoryColor">CATEGORY COLOR</label>
+                    <div class="category-color-picker" id="categoryColorPicker" role="radiogroup" aria-label="Category color">
+                        <button type="button" class="color-choice teal" data-color="teal" aria-label="Teal"></button>
+                        <button type="button" class="color-choice violet" data-color="violet" aria-label="Violet"></button>
+                        <button type="button" class="color-choice orange" data-color="orange" aria-label="Orange"></button>
+                        <button type="button" class="color-choice green" data-color="green" aria-label="Green"></button>
+                        <button type="button" class="color-choice pink" data-color="pink" aria-label="Pink"></button>
+                        <button type="button" class="color-choice blue" data-color="blue" aria-label="Blue"></button>
+                    </div>
+                    <input id="categoryColor" type="hidden" value="teal">
+                </div>
+
+                <div class="field full">
+                    <label for="categoryDescription">DESCRIPTION</label>
+                    <input id="categoryDescription" type="text"
+                           placeholder="e.g. Outdoor and gardening equipment" required>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn" id="cancelCategory" type="button">Cancel</button>
+                    <button class="btn primary" type="submit">Save Category</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/supabase-config.js"></script>
+    <script src="js/online.js"></script>
+    <script src="js/status.js"></script>
+    <script src="js/profile-menu.js"></script>
+<script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

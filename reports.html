@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeStock — Reports</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">
+                <span>H</span>
+                <b>HomeStock</b>
+            </div>
+            <nav>
+                <a href="index.html">▣ <span>Dashboard</span></a>
+                <a href="inventory.html">⬡ <span>Inventory</span></a>
+                <a href="rooms.html">⌂ <span>Rooms</span></a>
+                <a href="categories.html">▤ <span>Categories</span></a>
+                <a class="active" href="reports.html">▥ <span>Reports</span></a>
+            <a href="activity.html">◷<span>Activity</span></a>
+    
+    </nav>
+            <div class="sidebar-account">
+<div class="sidebar-account-link" aria-hidden="true">
+<span class="sidebar-account-avatar" data-profile-avatar>🙂</span>
+<span class="sidebar-account-copy"><strong data-user-name>HomeStock User</strong><span data-user-email>Account</span></span>
+</div>
+</div>
+</aside>
+
+        <main>
+            <header>
+                <div>
+                    <h1>Reports</h1>
+                    <p>Overview of your home's inventory</p>
+                </div>
+                <div class="actions">
+                    <button class="btn" id="exportReportCsv" type="button">
+                        Export CSV
+                    </button>
+                    <button class="btn primary" id="generatePdf" type="button">
+                        Generate PDF
+                    </button>
+                    <button class="avatar profile-header-button" type="button" data-profile-toggle title="Open profile" aria-expanded="false"><span data-profile-avatar>🙂</span></button>
+                </div>
+            </header>
+
+            <section class="report-stats">
+                <div class="stat teal">
+                    <label>TOTAL ITEMS</label>
+                    <strong id="reportTotalItems">0</strong>
+                    <small>Across your home</small>
+                </div>
+                <div class="stat purple">
+                    <label>TOTAL VALUE</label>
+                    <strong id="reportTotalValue">0 RWF</strong>
+                    <small>Estimated inventory value</small>
+                </div>
+                <div class="stat orange">
+                    <label>ROOMS TRACKED</label>
+                    <strong id="reportRooms">0</strong>
+                    <small>Rooms with inventory</small>
+                </div>
+                <div class="stat teal">
+                    <label>CATEGORIES</label>
+                    <strong id="reportCategories">0</strong>
+                    <small>Categories in use</small>
+                </div>
+            </section>
+
+            <section class="report-grid">
+                <div class="report-panel">
+                    <div class="section-title">
+                        <h2>Inventory by Category</h2>
+                    </div>
+                    <div id="categoryReport" class="report-list"></div>
+                </div>
+
+                <div class="report-panel">
+                    <div class="section-title">
+                        <h2>Inventory by Room</h2>
+                    </div>
+                    <div id="roomReport" class="report-list"></div>
+                </div>
+
+                <div class="report-panel">
+                    <div class="section-title">
+                        <h2>Stock Status</h2>
+                    </div>
+                    <div class="status-report">
+                        <div><span>In Stock</span><b id="inStockCount">0</b></div>
+                        <div><span>Low Stock</span><b id="lowStockCount">0</b></div>
+                        <div><span>Out of Stock</span><b id="outStockCount">0</b></div>
+                    </div>
+                </div>
+
+                <div class="report-panel">
+                    <div class="section-title">
+                        <h2>Highest-Value Items</h2>
+                    </div>
+                    <div id="topItemsReport" class="report-list"></div>
+                </div>
+            </section>
+
+            <section class="report-panel report-full">
+                <div class="section-title">
+                    <h2>Report Summary</h2>
+                    <span id="reportUpdated"></span>
+                </div>
+                <p id="reportSummary" class="report-summary"></p>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/supabase-config.js"></script>
+    <script src="js/online.js"></script>
+    <script src="js/status.js"></script>
+    <script src="js/profile-menu.js"></script>
+<script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

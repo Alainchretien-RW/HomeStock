@@ -157,8 +157,15 @@
         }));
     }
 
+    function refreshFromOnlineUser() {
+        refreshUserDisplay();
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
         refreshUserDisplay();
+        // online.js loads the Supabase profile asynchronously after DOMContentLoaded.
+        // Refresh again when that data arrives so name/email appear immediately after login.
+        window.addEventListener("homestock-data-changed", refreshFromOnlineUser);
         document.querySelectorAll("[data-profile-toggle]").forEach(button => {
             button.addEventListener("click", e => { e.preventDefault(); activePopup ? closePopup() : showPopup(button); });
         });

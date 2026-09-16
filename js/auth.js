@@ -16,40 +16,8 @@
 
     function protectPages() {
         const page = location.pathname.split("/").pop().toLowerCase();
-        const publicPages = ["login.html", "register.html", "login", "register", ""];
+        const publicPages = ["login.html", "register.html", ""];
         if (!publicPages.includes(page) && !isLoggedIn()) location.href = "login.html";
-    }
-
-    async function handleOAuthCallback() {
-        // Supabase OAuth returns the access token in the URL hash.
-        const hash = new URLSearchParams(location.hash.replace(/^#/, ""));
-        const accessToken = hash.get("access_token");
-        const refreshToken = hash.get("refresh_token");
-        if (!accessToken) return false;
-
-        localStorage.setItem("homestock-access-token", accessToken);
-        if (refreshToken) localStorage.setItem("homestock-refresh-token", refreshToken);
-
-        try {
-            await window.HomeStockOnline.pull();
-        } catch (error) {
-            console.warn("HomeStock OAuth sync failed:", error);
-        }
-
-        history.replaceState({}, document.title, location.pathname + location.search);
-        location.href = "index.html";
-        return true;
-    }
-
-    function setupGoogleLogin() {
-        const button = document.querySelector("#googleLogin");
-        if (!button) return;
-        button.addEventListener("click", () => {
-            if (!online()) return;
-            const redirectTo = new URL("login.html", location.href).href;
-            window.location.href =
-                `${window.HOMESTOCK_SUPABASE_URL}/auth/v1/authorize?provider=google&redirect_to=${encodeURIComponent(redirectTo)}`;
-        });
     }
 
     function setupLogin() {
@@ -147,8 +115,7 @@
         });
     }
 
-    document.addEventListener("DOMContentLoaded", async () => {
-        if (online() && await handleOAuthCallback()) return;
-        protectPages(); setupLogin(); setupRegister(); setupGoogleLogin(); setupUserDisplay(); setupLogout();
+    document.addEventListener("DOMContentLoaded", () => {
+        protectPages(); setupLogin(); setupRegister(); setupUserDisplay(); setupLogout();
     });
 })();

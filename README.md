@@ -24,3 +24,10 @@ Inventory, rooms, categories and activity belong to the signed-in household. Row
 
 ## Important
 The app keeps a browser cache for the existing UI, but Supabase is the online source of truth. The current v2 migration layer syncs data periodically. Before production launch, test multi-device editing and then enable/configure Supabase Realtime if true instant updates are required.
+
+
+## Netlify + Google OAuth
+- The app supports both `/login` and `/register` pretty URLs used by Netlify.
+- In Supabase Authentication > URL Configuration, set your Site URL to your Netlify site.
+- Add the Netlify login URL as an allowed redirect URL (for example `https://your-site.netlify.app/login.html`).
+- Google sign-in requires the Google provider to be enabled in Supabase Authentication > Providers.
